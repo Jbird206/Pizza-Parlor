@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Parlour</title>
+</head>
+<div class="container">
+<body>
+  <form id="create-account">
+    <label for="firstname">First name:</label><br>
+    <input type="text" id="firstname"  required><br>
+    <label for="lastname">Last Name:</label><br>
+    <input type="text" id="lastname"  required><br>
+    <label for="address">Enter you address</label><br>
+    <input type="text" id="address"  required><br>
+    <label for="cart"> Your Cart</label><br>
+    <input type="text" id="cart" placeholder="$0" readonly><br>
+    <br>
+    <button class = "button2"  type="submit">Make account</button>
+</form>
+<br>
+<label for="outputName">Account Info:</label> 
+    <textarea id="outputName" rows="2" cols="20" readonly="readonly"></textarea>
+    <label for="output">Your Cart:</label>
+    <textarea id="output" rows="1" cols="20" placeholder="$0" readonly="readonly"></textarea>
+  <hr>
+  <br>
+  <h2>Place your order</h2>
+  <br>
+  <h3>Pizza Size</h3>
+  <form id="pizzaToppings">
+    <label for="small">small</label>
+    <input class="calc" type="radio" id="small"  value="8"><br>
+    <label for="medium">medium</label>
+    <input class="calc" type="radio" id="medium"  value="12"><br>
+    <label for="large">large</label>
+    <input class="calc" type="radio" id="large"  value="16"><br>
+    
+    <h2>Topping Choices</h2>
+    <label for ="pepperoni">Pepperoni</label>
+    <input class = "calc" type="radio" id="pepperoni" value="2"><br>
+    <input type="text" name="sum">
+    <button class = "button2" id="tally"  type="submit">Order</button>
+</form>
+  
+  </div> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
