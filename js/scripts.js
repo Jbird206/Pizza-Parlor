@@ -1,6 +1,9 @@
 function PizzaParlor() {
   this.account = [];
-  this.currentId = 0
+  this.order = [];
+  this.currentId = 0;
+  //this.price = price;
+  //this.toppings = toppings;
 }
 
 PizzaParlor.prototype.addAccount = function(account) {
@@ -13,8 +16,22 @@ PizzaParlor.prototype.assignId = function() {
   return this.currentId;
 }
 
+var Order = function(firstName, lastName, myAddress, price) {
+  this.firstName = firstName,
+    this.lastName = lastName,
+    this.address = myAddress,
+    this.price = price;
+  return this.firstName + this.lastName + this.address + this.price;
+};
 
-
+PizzaParlor.prototype.addOrder = function() {
+var total = parseInt(this.price);
+if (this.toppings.lenth > 1) {
+  return price + (parseInt(this.toppings.length) - 1);
+} else {
+  return price;
+}
+}
 
 var Account = function(firstName, lastName, myAddress, price) {
   this.firstName = firstName,
@@ -24,23 +41,25 @@ var Account = function(firstName, lastName, myAddress, price) {
   return this.firstName + this.lastName + this.address + this.price;
 };
 
-var Order = function(firstName, lastName, myAddress, myPrice) {
-  this.firstName = firstName,
-    this.lastName = lastName,
-    this.address = myAddress,
-    this.myprice = myPrice;
-  return this.firstName + this.lastName + this.address + this.myPrice;
-};
-
-
-
-
 ///////////////////////////////////front end///////////////////////
 var PizzaParlor = new PizzaParlor();
-
-
 $(document).ready(function() {
-  //create account//
+
+function calcprice() {
+  var price = 0;
+  $(".calc:checked").each(function() {
+    price += parseInt($(this).val(), 10);
+  });
+
+  $("input#output").val(price)
+  $("#outputOrder").html(price);
+}
+$().ready(function() {
+  $(".calc").change(function() {
+    calcprice()
+ });
+});
+
   $("form#create-account").submit(function(event) {
     event.preventDefault();
     var inputfirstname = $("input#firstname").val();
@@ -50,22 +69,9 @@ $(document).ready(function() {
     var createAccount = new Account(inputfirstname, inputlastname, inputaddress + inputprice);
 
     PizzaParlor.addAccount(createAccount);
-    $("#outputName").html(inputfirstname + " " + inputlastname + " " + inputaddress + inputprice);
+    $("#outputName").html(inputfirstname + " " + inputlastname + " " + inputaddress + " Your total is $ " + inputprice);
     $("output").html(createAccount.address);
   });
 
-
-  function calcprice() {
-    var price = 0;
-    $(".calc:checked").each(function() {
-      price += parseInt($(this).val(), 10);
-    });
-
-    $("input#output").val(price)
-  }
-  $().ready(function() {
-    $(".calc").change(function() {
-      calcprice()
-    });
-  });
 })
+

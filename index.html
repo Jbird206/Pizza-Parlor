@@ -8,16 +8,15 @@
   <script src="js/scripts.js"></script>
   <title>Pizza Parlour</title>
 </head>
-
 <body>
   <div class="container">
     <div class="page-header2"><br>
       <h1>Machiavelli's Pizza</h1><br>
     </div>
     <br>
-
+    <div class="p-3 mb-2 bg-info text-white">
     <h2>Delivery Info</h2>
-
+  </div>
     <form id="create-account">
       <label for="firstname">First name:</label><br>
       <input type="text" id="firstname" required><br>
@@ -25,12 +24,6 @@
       <input type="text" id="lastname" required><br>
       <label for="address">Enter you address</label><br>
       <input type="text" id="address" required><br>
-      <br>
-      <button class="button2" type="submit">Make account</button>
-    </form>
-    <br>
-    <label for="outputName">Account Info:</label>
-    <textarea id="outputName" rows="2" cols="30" readonly="readonly"></textarea>
     <hr>
     <br>
     <div class="p-3 mb-2 bg-info text-white">
@@ -38,7 +31,6 @@
     </div>
     <br>
     <h3>Pizza Size</h3>
-    <form id="pizzaToppings">
       <label for="small">small</label>
       <input class="calc" type="radio" id="small" value="8"><br>
       <label for="medium">medium</label>
@@ -51,11 +43,14 @@
       <input class="calc" type="radio" id="pepperoni" value="2"><br>
       <label for="Onions">Onions</label>
       <input class="calc" type="radio" id="Onions" value="2"><br>
+      <label for="Broccoli">Broccoli</label>
+      <input class="calc" type="radio" id="Broccoli" value="2"><br>
       <input type="text" id="output" placeholder="$0">
-      <button class="button2" id="tally" type="submit">Order</button>
+      <label for="outputName">Sub Total:</label><br>
+    <br>
+    <button class="button2" type="submit">Order</button>
+    <textarea id="outputName" rows="2" cols="70" readonly="readonly"></textarea>
     </form>
-
   </div>
 </body>
-
 </html>
