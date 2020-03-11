@@ -31,24 +31,35 @@
     </div>
     <br>
     <h3>Pizza Size</h3>
-      <label for="small">small</label>
-      <input class="calc" type="radio" id="small" value="8"><br>
+    <p>Size:</p>
+      <label for="small">Small</label>
+      <input type="radio" name="group1" id="small" data-price="8" class="calc"><br>
       <label for="medium">medium</label>
-      <input class="calc" type="radio" id="medium" value="12"><br>
-      <label for="large">large</label>
-      <input class="calc" type="radio" id="large" value="16"><br>
-
-      <h2>Topping Choices</h2>
-      <label for="pepperoni">Pepperoni</label>
-      <input class="calc" type="radio" id="pepperoni" value="2"><br>
-      <label for="Onions">Onions</label>
-      <input class="calc" type="radio" id="Onions" value="2"><br>
-      <label for="Broccoli">Broccoli</label>
-      <input class="calc" type="radio" id="Broccoli" value="2"><br>
-      <input type="text" id="output" placeholder="$0">
-      <label for="outputName">Sub Total:</label><br>
+      <input type="radio" name="group1" id="medium" data-price="10" class="calc"><br>
+      <label for="large">Large</label>
+      <input type="radio" name="group1" id="Large" data-price="12" class="calc"><br>
+      <label for="X-Large">X-Large</label>
+      <input type="radio" name="group1" id="X-Large" data-price="16" class="calc"><br>
+      <br>
+      <hr>
+      
+      <h3>Toppings</h3>
+      <label for="topping-pep">Pepperoni $3</label>
+      <input type="radio" name="topping-pep" data-price="3" class="calc"><br>
+      <label for="topping-saus">Sausage</label>
+      <input type="radio" name="topping-sausage" data-price="3.00" class="calc"><br>
+      <label for="topping-onion">Onion</label>
+      <input type="radio" name="topping-onion" data-price="2.00" class="calc"><br>
+      <label for="topping-mushroom">Mushroom</label>
+      <input type="radio" name="topping-mushroom" data-price="2.50" class="calc"><br>
+      <hr>
+      
+      <p>Subtotal: $<span id="price">--.--</span></p>
+      <!-- <input type="text" id="output"  placeholder="$0">
+      <label for="outputName">Sub Total:</label><br> -->
     <br>
-    <button class="button2" type="submit">Order</button>
+    <button class="button2" type="submit">Order</button><br>
+    <br>
     <textarea id="outputName" rows="2" cols="70" readonly="readonly"></textarea>
     </form>
   </div>
