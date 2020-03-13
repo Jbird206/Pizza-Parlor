@@ -40,9 +40,16 @@ $(document).ready(function() {
     $("input[type=radio][data-price]:checked").each(function(i, el) {
       price += +$(el).data("price");
     });
-    $("#price").text(price);
-    
-  }
+    return price;
+  };
+
+  function order() {
+    var order = [];
+    $("input[type=radio][id]:checked").each(function(i, el) {
+      order.push(el.id);
+    });
+    return order;
+  };
 
   $("input[type=radio]").on("change", calcPrice);
   calcPrice();
@@ -54,14 +61,25 @@ $(document).ready(function() {
     var inputfirstname = $("input#firstname").val();
     var inputlastname = $("input#lastname").val();
     var inputaddress = $("input#address").val();
+    var finalPrice = calcPrice();
+    var finalorder = order();
+
+    console.log(finalPrice);
+    console.log(finalorder);
+
     var inputprice = $("input#price").html(price);
+
     //var inputprice = $("input#calc").val();
     var createAccount = new Account(inputfirstname, inputlastname, inputaddress, inputprice);
 
     PizzaParlor.addAccount(createAccount);
-    console.log(this.inputprice)
-    $("#outputName").html(inputfirstname + " " + inputlastname + " " + inputaddress + ". Your total is $ " + inputprice);
-    $("output").html(createAccount.account);
+    console.log(this.inputprice);
+
+    $("#outputName").html(inputfirstname + " " + inputlastname + " " + inputaddress + ". Your total is $ " + finalPrice);
+
+    console.log(createAccount.account);
+
+    $("#output").html(createAccount.account);
 
   });
 
